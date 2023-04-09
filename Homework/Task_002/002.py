@@ -3,8 +3,8 @@
 
 number = int(input("Введите трехзначное число: "))
 
-numberTree = number%10
-numberTwo = int(((number%100)/10)//1)
+numberTree = number % 10
+numberTwo = int(((number % 100)/10)//1)
 numberOne = number//100
 
 sumNumbers = numberOne + numberTwo + numberTree
