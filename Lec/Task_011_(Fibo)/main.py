@@ -6,21 +6,15 @@
 # Input: 5 Output: 6
 
 n = int(input("Введите число: "))
-i = 0
-flag = 0
-a = 0
-b = 1
+f_i = 2
+f_1 = 0
+f_2 = 1
 
-while (n >= a):
-    print(f"{a} {i+1}")
-    if (a == n):
-        flag = 1
-    temp = a+b
-    a = b
-    b = temp
-    i += 1
+while f_2 < n:
+    f_1, f_2 = f_2, f_1 + f_2
+    f_i += 1
 
-if flag == 1:
-    print(f"Номер {i}")
+if (f_2 == n):
+    print(f"Номер {f_i}")
 else:
     print(f"Номер -1 ")
