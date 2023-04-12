@@ -5,16 +5,16 @@
 # Input: 6 -> -20 30 -40 50 10 -10 Output: 2
 
 n = int(input("Введите количество дней: "))
-count = 0 
+count = 0
 countMax = 0
 
-# range 5 -> 1, 2, 3, 4 
+# range 5 -> 1, 2, 3, 4
 # range (5, 10) -> 5, 6, 7, 8, 9
 # range (1, 10, 2) -> 1, 3, 5 ,7, 9
 for i in range(n):
     if int(input(f"Температура {i+1}: ")) > 0:
         count += 1
-        if count> countMax:
+        if count > countMax:
             countMax = count
     else:
         count = 0
