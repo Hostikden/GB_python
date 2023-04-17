@@ -453,7 +453,7 @@ Lec/Lec_001/007.py
     b = frozenset(a)    # теперь мы никак не можем его изменить
     print(b) # frozenset({1, 2, 3, 5, 8})
 
-(![Alt-текст](src\img\1.webp) "Таблица свойств")
+(![Alt-текст](https://raw.githubusercontent.com/Hostikden/GB_python/main/src/img/1.webp) "Таблица свойств")
 
 ### Множественное присваивание в Python:
 
