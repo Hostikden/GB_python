@@ -41,6 +41,11 @@
 - test = "example"
 - test = 'example'
 
+### Множественное присваивание в Python:
+
+    a, b = 1, 3
+    a = b = 4
+
 ### Как узнать тип данных переменной:
 
 - print(type(test))
@@ -453,9 +458,74 @@ Lec/Lec_001/007.py
     b = frozenset(a)    # теперь мы никак не можем его изменить
     print(b) # frozenset({1, 2, 3, 5, 8})
 
-(![Alt-текст](https://raw.githubusercontent.com/Hostikden/GB_python/main/src/img/1.webp) "Таблица свойств")
+![Alt-текст](https://raw.githubusercontent.com/Hostikden/GB_python/main/src/img/1.webp)
 
-### Множественное присваивание в Python:
+### List Comprehension
 
-    a, b = 1, 3
-    a = b = 4
+У каждого языка программирования есть свои особенности и преимущества. Одна из
+культовых фишек Python — list comprehension (редко переводится на русский, но можно
+использовать определение «генератора списка»). Comprehension легко читать, и их
+используют как начинающие, так и опытные разработчики. List comprehension — это
+упрощенный подход к созданию списка, который задействует цикл for, а также инструкции
+if-else для определения того, что в итоге окажется в финальном списке.
+
+    Простая ситуация — список:
+        list_1 = [exp for item in iterable]
+    
+    Выборка по заданному условию:
+        list_1 = [exp for item in iterable (if conditional)]
+
+    Задача 1
+        Создать список, состоящий из четных чисел в диапазоне от 1 до 100.
+    Решение:
+        Создать список чисел от 1 до 100
+        list_1 = []
+        for i in range(1, 101):
+        list_1.append(i)
+        print(list_1) # [1, 2, 3,..., 100]
+        Эту же функцию можно записать так:
+        list_1 = [i for i in range(1, 101)] # [1, 2, 3,..., 100]
+
+    Задача 2
+        Добавить условие (только чётные числа)
+        list_1 = [i for i in range(1, 101) if i % 2 == 0]# [2, 4, 6,..., 100]
+        Допустим, вы решили создать пары каждому из чисел (кортежи)
+        list_1 = [(i, i) for i in range(1, 101) if i % 2 == 0]# [(2, 2), (4, 4),..., (100, 100)]
+        Также можно умножать, делить, прибавлять, вычитать. Например, умножить значение на 2.
+        list_1 = [i * 2 for i in range(10) if i % 2 == 0]
+        print(list_1) # [0, 4, 8, 12, 16]
+
+### Профилирование и отладка
+
+    ● **IndentationError (Ошибка отступов)**
+    number_first = 5
+    number_second = 7
+    if number_first > number_second:
+    print(number_first) # !!!!!
+
+    ● **TypeError (Типовая ошибка)**
+    text = 'Python'
+    number = 5
+    print(text + number)
+    # Нельзя складывать строки и числа
+
+    ● **ZeroDivisionError(Деление на 0)**
+    number_first = 5
+    number_second = 0
+    print(number_first // number_second)
+    # Делить на 0 нельзя
+
+    ● **KeyError(Ошибка ключа)**
+    dictionary = {1: 'Monday', 2: 'Tuesday'}
+    print(dictionary[3])
+    # Такого ключа не существует
+
+    ● **NameError(Ошибка имени переменной)**
+    name = 'Ivan'
+    print(names)
+    # Переменной names не существует
+
+    ● **ValueError(Ошибка значения)**
+    text = 'Python'
+    print(int(text))
+    # Нельзя символы перевести в целые значения
