@@ -356,9 +356,106 @@ Lec/Lec_001/007.py
 
 ### Словари:
 
+Словари - неупорядочненные коллекции проивольных объектов с доступом по ключу.
+В списках в качестве ключа используется индекс элемента. В словаре для определения элемента используется значение ключа (строка, число).
 
+Создание пустого словаря:
 
+    d = {}
+    d = dict()
+    пример: Lec/Lec_002/025.py
 
+    # создали словарь
+    dictionary = {}
+    # внесли значения в словарь
+    dictionary ={'up': '↑', 'left': '←', 'down': '↓', 'right': '→'}
+    print(dictionary) # {'up':'↑', 'left':'←', 'down':'↓', 'right':'→'}
+    print(dictionary['left']) # ←
+
+Добваление нового ключа в словарь:
+
+    dictionary[895] = 98998
+    пример: Lec/Lec_002/026.py
+
+Удаление элемента в словаре:
+
+      del dictionary['left'] # удаление элемента
+      пример: Lec/Lec_002/027.py
+
+Типы ключей могут отличаться, можно использовать даже словарь в словаре!
+
+    print(dictionary['up']) # ↑
+    dictionary['left'] = '⇐'
+    print(dictionary['left']) # ⇐
+
+если мы обратимся к несуществующему ключу - будет ошибка:
+
+    print(dictionary['type']) # KeyError: 'type'
+
+Вывод значений через for:
+
+    for item in dictionary:                              
+    print('{}: {}'.format(item, dictionary[item]))
+    
+    # up: ↑
+    # down: ↓
+    # right: →
+
+    Либо:
+
+    for (k,v) in dictionary.items(): # dictionary.items - это список [] где каждый элемент - кортеж!
+        print(k, v)
+
+    # up ↑
+    # down ↓
+    # right →
+
+    пример: Lec/Lec_002/028.py
+
+### Множества:
+
+Множества содержат в себе уникальные элементы, не обязательно
+упорядоченные.
+
+Одно множество может содержать значения любых типов. Если у Вас есть два
+множества, Вы можете совершать над ними любые стандартные операции,
+например, объединение, пересечение и разность. Давайте разберем их.
+
+    colors = {'red', 'green', 'blue'}
+    print(colors) # {'red', 'green', 'blue'}
+    colors.add('red')
+    print(colors) # {'red', 'green', 'blue'}
+    colors.add('gray')
+    print(colors) # {'red', 'green', 'blue','gray'}
+    colors.remove('red')
+    print(colors) # {'green', 'blue','gray'}
+    colors.remove('red') # KeyError: 'red'
+    colors.discard('red') # ok
+    print(colors) # {'green', 'blue','gray'}
+    colors.clear() # { }
+    print(colors) # set()
+
+Операции со множествами в Python
+
+    a = {1, 2, 3, 5, 8}
+    b = {2, 5, 8, 13, 21}
+    c = a.copy() # c = {1, 2, 3, 5, 8}
+    u = a.union(b) # u = {1, 2, 3, 5, 8, 13,
+    i = a.intersection(b) # i = {8, 2, 5}
+    dl = a.difference(b) # dl = {1, 3}
+    dr = b.difference(a) # dr = {13, 21}
+    q=a.union(b).difference(a.intersection(b)) # {1, 21, 3, 13}
+
+**Неизменяемое или замороженное множество(frozenset)** — множество, с которым
+не будут работать методы удаления и добавления.
+
+    a = {1, 2, 3, 5, 8}
+    b = frozenset(a)
+    print(b) # frozenset({1, 2, 3, 5, 8})
+
+ДОПИСАТЬ    ДОПИСАТЬ    ДОПИСАТЬ
+ДОПИСАТЬ    ДОПИСАТЬ    ДОПИСАТЬ
+ДОПИСАТЬ    ДОПИСАТЬ    ДОПИСАТЬ
 
 ### Множественное присваивание в Python:
 
