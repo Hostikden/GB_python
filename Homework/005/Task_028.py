@@ -7,3 +7,11 @@
 # 2 2
 #     4 
 
+def sum (a, b):
+    if a <= 0:
+        a *= -1
+    elif b <= 0:
+        b *= -1
+    return a + b
+
+print(sum(2, 2))
