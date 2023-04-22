@@ -9,9 +9,11 @@
 
 def sum (a, b):
     if a <= 0:
-        a *= -1
+        a *= -1 
+        return sum(a, b)
     elif b <= 0:
         b *= -1
+        return sum(a, b)
     return a + b
 
 print(sum(2, 2))
