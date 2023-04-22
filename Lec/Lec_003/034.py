@@ -7,8 +7,16 @@
 # Input: 5 -> 1 3 3 3 4
 # Output: 1 3 3 3 1
 
-import modl34 as m34 
+import mod34 as m34 
 
-list [1,2,3,4,5,6,7,8,9]
+start_list = [1, 3, 3, 3, 4]
 
-m34.maxToMin(list)
+print(m34.maxToMin(start_list))
+
+
+
+
+
+
+
+
